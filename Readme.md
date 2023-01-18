@@ -1,6 +1,8 @@
 # Sequelize bundling issue replication
 
-Bundling an app that imports Sequelize may fail due to
+Bundling an app that imports Sequelize may fail due to Sequelize's current practice of importing dependencies for multiple DB drivers, even though some of these will not normally be installed (as an individual app will likely use only one DB type).
+
+Alternatively bundling may succeed, but produce a bundle which when executed causes a hard error when it tries to import the non-installed module(s).
 
 ### How to replicate:
 
